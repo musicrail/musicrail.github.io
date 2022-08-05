@@ -24,6 +24,11 @@ catButton.addEventListener("click", evt => {
     })
 })
 
+function modifyCounter(counter, displayCounter){
+    counter += 1
+    displayCounter.innerHTML = `<p> ${counter} </p>`
+}
+
 let firstButtonClickCount = 0
-firstButton.addEventListener("click", evt => firstButtonClickCount += 1)
-document.getElementById("first-button-count").innerHTML = `<p> ${firstButtonClickCount} </p>`
+let firstButtonClickCountDisplay = document.getElementById("first-button-count")
+firstButton.addEventListener("click", evt => modifyCounter(firstButtonClickCount, firstButtonClickCountDisplay))
