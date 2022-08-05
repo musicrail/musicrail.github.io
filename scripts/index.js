@@ -1,6 +1,11 @@
 let quotesDiv = document.getElementById("quotes")
+
 let catDiv = document.getElementById("cat-pic")
 let catButton = document.getElementById("give-cat")
+let firstButton = document.getElementById("first-button")
+let secondButton = document.getElementById("second-button")
+let thirdButton = document.getElementById("third-button")
+
 
 fetch("https://api.kanye.rest")
 .then(res => res.json())
@@ -18,3 +23,7 @@ catButton.addEventListener("click", evt => {
         })
     })
 })
+
+let firstButtonClickCount = 0
+firstButton.addEventListener("click", val => firstButtonClickCount += 1)
+document.getElementById("first-button-count").innerHTML = `<p> ${firstButtonClickCount} </p>`
